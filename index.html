@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📘 GRP F</title>
+  <title>📘 GRP F</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- ===== HEADER & NAVBAR ===== -->
   <header>
     <nav class="navbar">
       <ul class="nav-links">
@@ -21,72 +22,169 @@
     </nav>
   </header>
 
+  <!-- ===== MAIN ===== -->
   <main>
+    <!-- ===== ACCUEIL ===== -->
     <section id="accueil" class="active">
       <h1>Bienvenue sur mon site</h1>
       <p>Un espace pour coder et apprendre.</p>
     </section>
 
+    <!-- ===== COURS ===== -->
     <section id="cours">
       <h2>Mes cours</h2>
       <p>Ici, tu trouveras des notes et ressources de cours.</p>
-      <p>Cours de Mr.Micheli : <a href="https://www.notion.so/Cours-d-conomie-3-09-26339a8ae98f80ddb159f78950da0183?source=copy_link">Notion</a></p>
-      <p>Cours de Mme.Hammouche : <a targer="_blank" href="Poly-R1-08.pdf">Télécharger le pdf</a></p>
+        <a class="download-btn" href=https://www.notion.so/Cours-d-conomie-3-09-26339a8ae98f80ddb159f78950da0183?source=copy_link" target="_blank">Cours de Mr. Micheli : Notion</a>
+        <hr align="center" width="50%">
+        <a href="Poly-R1-08.pdf" download class="download-btn">Cours de Mme. Hammouche : Télécharger le PDF</a>
+
     </section>
 
+    <!-- ===== PROJETS / RAPPELS ===== -->
     <section id="projets">
-      <h2>Mes projets</h2>
-      <p>Découvre mes créations et exercices de code.</p>
+      <h2>Rappel ⚠️</h2>
+      <ul>
+        <li>
+          <div class="title">
+            <span>JMI</span>
+            <button class="menu-btn">⋮</button>
+          </div>
+          <div class="more-info">
+Bonjour à tous,
+
+Comme vous le savez sans doute le jeudi 16 octobre prochain aura lieu
+la journée des métiers de l'informatique [JMI].
+
+[JMI]: https://informatique.univ-lille.fr/jmi/2025
+
+Elle se déroulera dans les locaux de Polytech Lille situés sur notre
+campus (cf https://apr1.org/polytechlille).
+
+Les inscriptions, **obligatoires pour tous les étudiants de BUT**,
+sont ouvertes depuis ce mercredi 1er octobre.
+
+Lors de votre inscription vous devrez saisir votre adresse email
+institutionnelle (de la forme prenom.nom.etu@univ-lille.fr) sur
+laquelle vous recevrez un mot de passe vous permettant de modifier
+votre sélection si l'envie vous en venez.
+
+Des créneaux ont été réservés dans votre emploi du temps pour que vous
+y participiez. Cette participation fait partie intégrante de la
+formation et un émargement sera mis en place pour vérifier votre
+présence.
+
+Il est important et *impératif* de vous inscrire à *3* créneaux avant
+jeudi prochain (le 9 octobre) en allant sur le site :
+
+http://jmi.u-lille.fr
+          </div>
+        </li>
+
+        <li>
+          <div class="title">
+            <span>Rdv médical</span>
+            <button class="menu-btn">⋮</button>
+          </div>
+          <div class="more-info">
+Bonjour,
+
+Vous avez reçu un mail du service universitaire de santé étudiante, où vous devez vous positionner sur un créneau pour faire votre visite médicale.
+
+Cette visite médicale est OBLIGATOIRE.
+
+Un récapitulatif du service santé sera fait afin de savoir si tous les étudiants ont bien fait leur visite médicale.
+
+Sans la visite médicale, il ne sera pas possible de valider votre année.
+
+Pensez à me transmettre votre justificatif quand vous avez fait votre visite.
+
+Cordialement.
+          </div>
+        </li>
+      </ul>
     </section>
 
+    <!-- ===== AIDE ===== -->
     <section id="aide">
       <h2>Aide et ressources</h2>
       <p>Des liens utiles et conseils pour progresser.</p>
-      <p>cours des commande : <a href ="https://www.notion.so/Commande-26239a8ae98f80aea23ec7ca01ec0f26?source=copy_link">Notion</a></p>
+      <button class="menu-btn">Cours des commandes : 
+        <a href="https://www.notion.so/Commande-26239a8ae98f80aea23ec7ca01ec0f26?source=copy_link" target="_blank">Notion</a>
+      </button>
     </section>
 
-<section id="qcm">
-  <h1>💻 QCM Depuis un texte</h1>
+    <!-- ===== QCM ===== -->
+    <section id="qcm">
+      <h1>💻 QCM Depuis un texte</h1>
+      <label for="fileSelect">Choisis un fichier QCM :</label>
+      <select id="fileSelect">
+        <option value="">-- Sélectionner un fichier --</option>
+        <option value="QCMtxt/QCM_Base_Fichiers.txt">Base fichiers</option>
+        <option value="QCMtxt/QCM_Editeurs_Texte.txt">Éditeurs de texte</option>
+        <option value="QCMtxt/QCM_Flux_Redirection.txt">Flux et redirection</option>
+        <option value="QCMtxt/QCM_Traitement_Texte.txt">Traitement du texte</option>
+        <option value="QCMtxt/QCM_Expansion_Globbing.txt">Expansion et globbing</option>
+        <option value="QCMtxt/QCM_Code_Retour.txt">Code de retour</option>
+      </select>
+      <div id="quizContainer"></div>
+      <div id="navigationButtons">
+        <button id="prevBtn" style="display:none;">⬅️ Précédent</button>
+        <button id="nextBtn" style="display:none;">➡️ Suivant</button>
+        <button id="submitBtn" style="display:none;">✅ Terminer</button>
+      </div>
+      <div id="result"></div>
+    </section>
 
-  <label for="fileSelect">Choisis un fichier QCM :</label>
-  <select id="fileSelect">
-    <option value="">-- Sélectionner un fichier --</option>
-    <option value="QCMtxt/QCM_Base_Fichiers.txt">Base fichiers</option>
-    <option value="QCMtxt/QCM_Editeurs_Texte.txt">Éditeurs de texte</option>
-    <option value="QCMtxt/QCM_Flux_Redirection.txt">Flux et redirection</option>
-    <option value="QCMtxt/QCM_Traitement_Texte.txt">Traitement du texte</option>
-    <option value="QCMtxt/QCM_Expansion_Globbing.txt">Expansion et globbing</option>
-    <option value="QCMtxt/QCM_Code_Retour.txt">Code de retour</option>
-  </select>
-
-  <div id="quizContainer"></div>
-  <div id="navigationButtons">
-    <button id="prevBtn" style="display:none;">⬅️ Précédent</button>
-    <button id="nextBtn" style="display:none;">➡️ Suivant</button>
-    <button id="submitBtn" style="display:none;">✅ Terminer</button>
-  </div>
-  <div id="result"></div>
-</section>
-
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Tu peux me joindre ici :</p>
-  <div class="contact-info">
-    <p>💬 Discord : 
-      <a class="contact-link" href="https://discord.gg/HGUBD562" target="_blank">GRP F canne a pêche</a>
-    </p>
-    <p>✉️ Mail : 
-      <a class="contact-link" href="mailto:amine.hami.etu@univ-lille.fr">amine.hami.etu@univ-lille.fr</a>
-    </p>
-  </div>
-</section>
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <br>
+      <p>Tu peux me joindre ici :</p>
+      <br>
+      <div class="contact-info">
+        <a class="discord-btn" href="https://discord.gg/HGUBD562" target="_blank">
+          💬 Rejoindre le serveur Discord — <strong>GRP F canne à pêche</strong>
+        </a>
+        <ul>
+          <li>
+            <div class="title">
+              <span>👤 Contact Amine</span>
+              <button class="menu-btn">⋮</button>
+            </div>
+            <div class="more-info">
+              <p>💯 Instagram : 
+                <a href="https://www.instagram.com/lemo.jito/" target="_blank">Lemo.jito</a>
+              </p>
+              <p>✉️ Mail : 
+                <a class="contact-link" href="mailto:amine.hami.etu@univ-lille.fr">amine.hami.etu@univ-lille.fr</a>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="title">
+              <span>👤 Contact Charlelie</span>
+              <button class="menu-btn">⋮</button>
+            </div>
+            <div class="more-info">
+              <p>💯 Instagram : 
+                <a href="https://www.instagram.com/j_charlelie2007/" target="_blank">j_charlelie2007</a>
+              </p>
+              <p>✉️ Mail : 
+                <a class="contact-link" href="mailto:charlelie.jean.etu@univ-lille.fr">charlelie.jean.etu@univ-lille.fr</a>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
     <p>Copyright © Aokiji</p>
   </footer>
 
+  <!-- ===== SCRIPT JS ===== -->
   <script src="main.js"></script>
 </body>
 </html>

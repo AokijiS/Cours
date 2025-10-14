@@ -1,9 +1,7 @@
-/* === Navigation entre sections === */
 const links = document.querySelectorAll('.nav-links a');
 const sections = document.querySelectorAll('section');
 let activeSection = document.querySelector('section.active') || sections[0];
 
-// Affiche seulement la section active au départ
 sections.forEach(section => {
   if (section !== activeSection) section.style.display = "none";
 });
@@ -143,3 +141,37 @@ submitBtn.addEventListener('click', ()=>{
   quizContainer.innerHTML=`<h2>Résultat :</h2><p>🎯 ${score} / ${questions.length}</p>`;
   prevBtn.style.display = nextBtn.style.display = submitBtn.style.display = 'none';
 });
+
+document.querySelectorAll('.menu-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const info = btn.parentElement.nextElementSibling;
+    info.style.display = info.style.display === 'block' ? 'none' : 'block';
+  });
+});
+
+
+    // JS pour afficher/masquer les détails au clic sur ⋮
+    document.querySelectorAll('.menu-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const info = btn.parentElement.nextElementSibling;
+
+        // Fermer les autres avant d’ouvrir la sélection
+        document.querySelectorAll('.more-info').forEach(el => {
+          if (el !== info) el.style.display = 'none';
+        });
+
+        // Alterne l’affichage
+        info.style.display = info.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+document.querySelectorAll('.menu-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const info = btn.closest('li').querySelector('.more-info');
+    if (info) {
+      info.style.display = info.style.display === 'block' ? 'none' : 'block';
+    }
+  });
+});
+
+
