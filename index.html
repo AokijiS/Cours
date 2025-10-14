@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📘 GRP F</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#cours">Cours</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#aide">Aide</a></li>
+        <li><a href="#qcm">QCM</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="accueil" class="active">
+      <h1>Bienvenue sur mon site</h1>
+      <p>Un espace pour coder et apprendre.</p>
+    </section>
+
+    <section id="cours">
+      <h2>Mes cours</h2>
+      <p>Ici, tu trouveras des notes et ressources de cours.</p>
+      <p>Cours de Mr.Micheli : <a href="https://www.notion.so/Cours-d-conomie-3-09-26339a8ae98f80ddb159f78950da0183?source=copy_link">Notion</a></p>
+      <p>Cours de Mme.Hammouche : <a targer="_blank" href="/Users/aokiji/Downloads/COURS/Poly R1.08 (étudiant).pdf">Télécharger le pdf</a></p>
+    </section>
+
+    <section id="projets">
+      <h2>Mes projets</h2>
+      <p>Découvre mes créations et exercices de code.</p>
+    </section>
+
+    <section id="aide">
+      <h2>Aide et ressources</h2>
+      <p>Des liens utiles et conseils pour progresser.</p>
+    </section>
+
+    <section id="qcm">
+      <h1>💻 QCM Depuis un texte</h1>
+      <input type="file" id="fileInput" accept=".txt">
+      <div id="quizContainer"></div>
+      <div id="navigationButtons">
+        <button id="prevBtn" style="display:none;">⬅️ Précédent</button>
+        <button id="nextBtn" style="display:none;">➡️ Suivant</button>
+        <button id="submitBtn" style="display:none;">✅ Terminer</button>
+      </div>
+      <div id="result"></div>
+    </section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Tu peux me joindre ici :</p>
+  <div class="contact-info">
+    <p>💬 Discord : 
+      <a class="contact-link" href="https://discord.gg/HGUBD562" target="_blank">GRP F canne a pêche</a>
+    </p>
+    <p>✉️ Mail : 
+      <a class="contact-link" href="mailto:amine.hami.etu@univ-lille.fr">amine.hami.etu@univ-lille.fr</a>
+    </p>
+  </div>
+</section>
+  </main>
+
+  <footer>
+    <p>Copyright © Aokiji</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
