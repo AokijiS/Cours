@@ -1,0 +1,127 @@
+Q: Quelle commande permet d'afficher le manuel d'une commande ?
+A) help
+B) info
+C) man
+D) guide
+R: C
+E: La commande `man` affiche le manuel complet d’une commande Unix/Linux.
+
+Q: Quelle commande affiche le type d’un fichier ?
+A) stat
+B) file
+C) cat
+D) type
+R: B
+E: `file` analyse le fichier et indique son type (texte, binaire, image, etc.).
+
+Q: Quelle commande permet de déplacer ou renommer un fichier ?
+A) cp
+B) mv
+C) rm
+D) ls
+R: B
+E: `mv` sert à déplacer un fichier ou à le renommer selon la destination donnée.
+
+Q: Quelle commande affiche le contenu d’un fichier texte ?
+A) ls
+B) file
+C) cat
+D) echo
+R: C
+E: `cat` affiche le contenu d’un fichier texte ou de plusieurs fichiers à la suite.
+
+Q: Quelle commande affiche le chemin complet du dossier courant ?
+A) cd
+B) ls
+C) pwd
+D) path
+R: C
+E: `pwd` (print working directory) montre le chemin absolu du répertoire actuel.
+
+Q: Que fait la commande `ls -a` ?
+A) Affiche les fichiers avec permissions
+B) Affiche tous les fichiers, y compris les cachés
+C) Trie les fichiers par date
+D) Change de dossier
+R: B
+E: L’option `-a` affiche également les fichiers cachés commençant par un point.
+
+Q: Que fait la commande `cd ..` ?
+A) Va à la racine
+B) Va au home
+C) Va au dossier parent
+D) Rafraîchit le terminal
+R: C
+E: `..` signifie "répertoire parent", donc `cd ..` remonte d’un niveau.
+
+Q: Quelle commande permet de créer un dossier ?
+A) touch
+B) mkdir
+C) cat
+D) newdir
+R: B
+E: `mkdir` (make directory) crée un nouveau dossier.
+
+Q: Quelle commande affiche des informations détaillées sur un fichier ?
+A) ls -l
+B) file
+C) stat
+D) chmod
+R: C
+E: `stat` montre les métadonnées d’un fichier : taille, dates, permissions, etc.
+
+Q: Quelle commande modifie les droits d’accès d’un fichier ?
+A) chown
+B) chmod
+C) access
+D) rights
+R: B
+E: `chmod` change les permissions (lecture, écriture, exécution) d’un fichier.
+
+Q: Quelle commande affiche l’arborescence d’un dossier ?
+A) tree
+B) ls -R
+C) structure
+D) dir
+R: A
+E: `tree` affiche l’arborescence complète des fichiers et dossiers dans un format visuel.
+
+Q: Quelle commande sert à afficher le contenu d’une variable d’environnement ?
+A) var
+B) echo
+C) env
+D) export
+R: B
+E: `echo $VARIABLE` montre la valeur d’une variable d’environnement.
+
+Q: Quelle commande permet de créer un fichier vide ?
+A) mkdir
+B) create
+C) touch
+D) new
+R: C
+E: `touch` crée un fichier vide ou met à jour la date d’un fichier existant.
+
+Q: Quelle commande supprime un fichier ou dossier ?
+A) rm
+B) del
+C) erase
+D) rmdir
+R: A
+E: `rm` supprime des fichiers ; avec `-r`, elle peut supprimer des dossiers et leur contenu.
+
+Q: Quelle commande copie un fichier ou un dossier ?
+A) mv
+B) cp
+C) clone
+D) copy
+R: B
+E: `cp` permet de dupliquer un fichier ou un dossier, éventuellement avec `-r`.
+
+Q: Quelle commande affiche la liste des processus en cours ?
+A) top
+B) jobs
+C) ps
+D) tasks
+R: C
+E: `ps` affiche la liste des processus actifs dans le terminal.

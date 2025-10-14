@@ -18,17 +18,16 @@ links.forEach(link => {
     // Masque la section active
     activeSection.classList.remove('active');
 
-    // Attends la fin de la transition
     setTimeout(() => {
       activeSection.style.display = "none";
 
       // Affiche la nouvelle section
       targetSection.style.display = "flex";
-      void targetSection.offsetWidth; // forcer reflow
+      void targetSection.offsetWidth;
       targetSection.classList.add('active');
 
       activeSection = targetSection;
-    }, 500); // correspond à la transition CSS
+    }, 500);
   });
 });
 
@@ -42,19 +41,28 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const submitBtn = document.getElementById('submitBtn');
 const resultDiv = document.getElementById('result');
+const fileSelect = document.getElementById('fileSelect'); // <- nouvelle liste
 
-document.getElementById('fileInput').addEventListener('change', function(event){
-  const file = event.target.files[0];
-  if(!file) return;
+// Quand un fichier est sélectionné
+fileSelect.addEventListener('change', function() {
+  const fileName = fileSelect.value;
+  if (!fileName) return;
 
-  const reader = new FileReader();
-  reader.onload = function(e){
-    parseQuestions(e.target.result);
-    currentQuestionIndex = 0;
-    score = 0;
-    displayQuestion();
-  }
-  reader.readAsText(file);
+  fetch(fileName)
+    .then(response => {
+      if (!response.ok) throw new Error("Erreur de chargement du fichier");
+      return response.text();
+    })
+    .then(text => {
+      parseQuestions(text);
+      currentQuestionIndex = 0;
+      score = 0;
+      displayQuestion();
+      resultDiv.innerHTML = '';
+    })
+    .catch(err => {
+      quizContainer.innerHTML = `<p style="color:red;">❌ ${err.message}</p>`;
+    });
 });
 
 function parseQuestions(text){

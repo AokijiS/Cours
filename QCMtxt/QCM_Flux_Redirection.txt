@@ -1,0 +1,39 @@
+Q: Quelle commande redirige la sortie d’une commande vers un fichier et l’affiche en même temps ?
+A) echo
+B) cat
+C) tee
+D) zcat
+R: C
+E: `tee` envoie la sortie vers un fichier et simultanément vers la sortie standard.
+
+Q: Quelle commande affiche le contenu d’un fichier compressé `.gz` sans le décompresser ?
+A) gzcat
+B) cat
+C) zcat
+D) gunzip
+R: C
+E: `zcat` lit le contenu d’un fichier `.gz` directement.
+
+Q: Quelle commande permet d’afficher du texte ou le contenu d’une variable ?
+A) echo
+B) cat
+C) tee
+D) sed
+R: A
+E: `echo` affiche du texte ou la valeur d’une variable d’environnement.
+
+Q: Quelle redirection remplace le contenu d’un fichier ?
+A) >
+B) >>
+C) |
+D) tee
+R: A
+E: `>` écrase le contenu du fichier avec la nouvelle sortie.
+
+Q: Quelle redirection ajoute à la fin du fichier sans effacer le contenu ?
+A) >
+B) >>
+C) |
+D) tee
+R: B
+E: `>>` ajoute la sortie à la fin du fichier existant.

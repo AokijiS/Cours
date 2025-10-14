@@ -1,0 +1,63 @@
+Q: Quelle commande filtre les lignes contenant un motif précis ?
+A) tr
+B) cut
+C) grep
+D) sort
+R: C
+E: `grep` sélectionne les lignes correspondant à un motif précis.
+
+Q: Quelle commande supprime les doublons successifs dans un flux trié ?
+A) uniq
+B) sort
+C) wc
+D) sed
+R: A
+E: `uniq` élimine les doublons consécutifs d’un flux trié.
+
+Q: Quelle commande trie les lignes d’un fichier ou d’un flux ?
+A) sort
+B) cut
+C) grep
+D) head
+R: A
+E: `sort` trie les lignes par ordre alphabétique ou selon une clé.
+
+Q: Quelle commande compte le nombre de lignes, de mots ou de caractères ?
+A) wc
+B) head
+C) tail
+D) tee
+R: A
+E: `wc` permet de compter lignes (`-l`), mots (`-w`) ou caractères (`-m`).
+
+Q: Quelle commande permet de remplacer ou supprimer des lignes dans un flux de texte ?
+A) tr
+B) sed
+C) cut
+D) sort
+R: B
+E: `sed` permet de modifier, supprimer ou insérer des lignes dans un flux de texte.
+
+Q: Quelle commande extrait certaines colonnes ou caractères d’un texte ?
+A) cut
+B) grep
+C) tr
+D) uniq
+R: A
+E: `cut` sélectionne des parties de chaque ligne selon un délimiteur ou des positions.
+
+Q: Quelle commande met des lettres en majuscules ou supprime des caractères spécifiques ?
+A) cut
+B) tr
+C) sed
+D) grep
+R: B
+E: `tr` transforme, supprime ou compresse des caractères dans un flux.
+
+Q: Quelle combinaison de commandes permet de compter les lignes contenant un mot ?
+A) cat fichier.txt | grep mot | wc -l
+B) cat fichier.txt | sort | uniq
+C) cat fichier.txt | cut -c1
+D) cat fichier.txt | tr a-z A-Z
+R: A
+E: Cette chaîne filtre les lignes contenant "mot" et compte leur nombre.

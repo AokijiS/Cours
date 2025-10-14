@@ -1,0 +1,23 @@
+Q: Que renvoie une commande si elle s’exécute correctement ?
+A) 1
+B) 0
+C) $?
+D) -1
+R: B
+E: Le code de retour 0 indique que la commande s’est bien exécutée.
+
+Q: Que renvoie une commande en cas d’erreur ?
+A) 0
+B) -1
+C) un nombre non nul
+D) $?
+R: C
+E: Toute valeur différente de 0 signale qu’une erreur est survenue lors de l’exécution.
+
+Q: Où est stocké le code de retour d’une commande ?
+A) $VAR
+B) $!
+C) $?
+D) $_
+R: C
+E: La variable spéciale `$?` contient le code de retour de la dernière commande exécutée.

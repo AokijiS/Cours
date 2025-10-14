@@ -42,19 +42,32 @@
     <section id="aide">
       <h2>Aide et ressources</h2>
       <p>Des liens utiles et conseils pour progresser.</p>
+      <p>cours des commande : <a href ="https://www.notion.so/Commande-26239a8ae98f80aea23ec7ca01ec0f26?source=copy_link">Notion</a></p>
     </section>
 
-    <section id="qcm">
-      <h1>💻 QCM Depuis un texte</h1>
-      <input type="file" id="fileInput" accept=".txt">
-      <div id="quizContainer"></div>
-      <div id="navigationButtons">
-        <button id="prevBtn" style="display:none;">⬅️ Précédent</button>
-        <button id="nextBtn" style="display:none;">➡️ Suivant</button>
-        <button id="submitBtn" style="display:none;">✅ Terminer</button>
-      </div>
-      <div id="result"></div>
-    </section>
+<section id="qcm">
+  <h1>💻 QCM Depuis un texte</h1>
+
+  <label for="fileSelect">Choisis un fichier QCM :</label>
+  <select id="fileSelect">
+    <option value="">-- Sélectionner un fichier --</option>
+    <option value="QCMtxt/QCM_Base_Fichiers.txt">Base fichiers</option>
+    <option value="QCMtxt/QCM_Editeurs_Texte.txt">Éditeurs de texte</option>
+    <option value="QCMtxt/QCM_Flux_Redirection.txt">Flux et redirection</option>
+    <option value="QCMtxt/QCM_Traitement_Texte.txt">Traitement du texte</option>
+    <option value="QCMtxt/QCM_Expansion_Globbing.txt">Expansion et globbing</option>
+    <option value="QCMtxt/QCM_Code_Retour.txt">Code de retour</option>
+  </select>
+
+  <div id="quizContainer"></div>
+  <div id="navigationButtons">
+    <button id="prevBtn" style="display:none;">⬅️ Précédent</button>
+    <button id="nextBtn" style="display:none;">➡️ Suivant</button>
+    <button id="submitBtn" style="display:none;">✅ Terminer</button>
+  </div>
+  <div id="result"></div>
+</section>
+
 
 <section id="contact">
   <h2>Contact</h2>

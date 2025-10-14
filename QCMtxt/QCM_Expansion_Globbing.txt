@@ -1,0 +1,71 @@
+Q: Que fait l’expression $VAR dans le shell ?
+A) Appelle une commande
+B) Affiche littéralement $VAR
+C) Remplace par la valeur de la variable
+D) Supprime la variable
+R: C
+E: `$VAR` est remplacé par la valeur de la variable correspondante.
+
+Q: Que fait $(commande) dans le shell ?
+A) Exécute la commande et remplace par son résultat
+B) Affiche littéralement $(commande)
+C) Crée un fichier
+D) Supprime un fichier
+R: A
+E: `$(commande)` est remplacé par le résultat affiché par la commande.
+
+Q: Que fait le joker * dans le shell ?
+A) Un seul caractère
+B) Aucune correspondance
+C) Toute suite de caractères
+D) Liste d’alternatives
+R: C
+E: `*` correspond à n’importe quelle chaîne de caractères.
+
+Q: Que fait le joker ? dans le shell ?
+A) Aucun caractère
+B) Un seul caractère
+C) Toute suite de caractères
+D) Classe de caractères
+R: B
+E: `?` correspond à un seul caractère.
+
+Q: Que fait [abc] dans le shell ?
+A) Correspond à a, b ou c
+B) Correspond à tout sauf a, b, c
+C) Correspond à une plage de caractères
+D) Correspond à deux caractères
+R: A
+E: `[abc]` correspond à un seul caractère parmi ceux listés.
+
+Q: Que fait {a,b} dans le shell ?
+A) Classe de caractères
+B) Liste d’alternatives
+C) Joker pour un caractère
+D) Expansion de variable
+R: B
+E: `{a,b}` développe en plusieurs alternatives : a ou b.
+
+Q: Que fait echo \$HOME ?
+A) Affiche le chemin du home
+B) Affiche littéralement $HOME
+C) Erreur de syntaxe
+D) Supprime le home
+R: B
+E: L’antislash protège le caractère `$`, affichant `$HOME` sans l’expansion.
+
+Q: Que fait echo '$HOME et $(date)' ?
+A) Affiche la valeur de HOME et la date
+B) Affiche littéralement $HOME et $(date)
+C) Erreur de syntaxe
+D) Affiche uniquement la date
+R: B
+E: Les quotes simples empêchent toute interprétation, affichant la chaîne telle quelle.
+
+Q: Que fait echo "Date : $(date)" ?
+A) Affiche littéralement $(date)
+B) Affiche la date actuelle avec le texte
+C) Erreur
+D) Ne fait rien
+R: B
+E: Les quotes doubles protègent tout sauf les variables et substitutions de commande, donc la date est évaluée.

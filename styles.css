@@ -132,9 +132,12 @@ section.active > * {
 
 /* === Pied de page === */
 footer {
-  background: rgba(30,30,30,0.85);
-  backdrop-filter: blur(8px);
-  color: #fff;
-  padding: 1rem;
-  font-size: 0.9rem;
+    position: fixed; /* reste toujours visible */
+    bottom: 0;       /* en bas de la fenêtre */
+    left: 0;
+    width: 100%;     /* prend toute la largeur */
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
 }

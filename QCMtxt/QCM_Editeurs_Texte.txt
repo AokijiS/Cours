@@ -1,0 +1,79 @@
+Q: Quel éditeur est simple et intuitif pour débutants ?
+A) vim
+B) nano
+C) emacs
+D) sed
+R: B
+E: `nano` est un éditeur simple et facile à utiliser pour les débutants.
+
+Q: Dans `nano`, quel raccourci permet de sauvegarder ?
+A) Ctrl + X
+B) Ctrl + O
+C) Ctrl + K
+D) Ctrl + U
+R: B
+E: `Ctrl + O` permet de sauvegarder le fichier dans `nano`.
+
+Q: Dans `nano`, quel raccourci permet de quitter ?
+A) Ctrl + Q
+B) Ctrl + X
+C) Ctrl + S
+D) Ctrl + C
+R: B
+E: `Ctrl + X` permet de quitter l’éditeur `nano`.
+
+Q: Quel éditeur est puissant mais complexe, utilisé par les développeurs ?
+A) nano
+B) vim
+C) sed
+D) cat
+R: B
+E: `vim` (ou `vi`) est un éditeur avancé avec modes normal, insertion et commande.
+
+Q: Dans `vim`, quelle commande sauvegarde et quitte ?
+A) :q
+B) :wq
+C) :x
+D) :quit
+R: B
+E: `:wq` sauvegarde le fichier et quitte `vim`.
+
+Q: Quelle commande permet de quitter sans sauvegarder dans `vim` ?
+A) :w
+B) :q!
+C) :x
+D) :save
+R: B
+E: `:q!` quitte `vim` sans sauvegarder les modifications.
+
+Q: Quel éditeur est très puissant avec de nombreuses fonctionnalités et raccourcis ?
+A) nano
+B) vim
+C) emacs
+D) sed
+R: C
+E: `emacs` est un éditeur très complet avec de nombreux raccourcis et fonctionnalités.
+
+Q: Dans `emacs`, quel raccourci permet de sauvegarder ?
+A) Ctrl + S
+B) Ctrl + X, Ctrl + S
+C) Ctrl + K
+D) Ctrl + C
+R: B
+E: `Ctrl + X, Ctrl + S` sauvegarde le fichier dans `emacs`.
+
+Q: Dans `emacs`, quel raccourci permet de quitter ?
+A) Ctrl + Q
+B) Ctrl + X, Ctrl + C
+C) Ctrl + K
+D) Ctrl + G
+R: B
+E: `Ctrl + X, Ctrl + C` permet de quitter `emacs`.
+
+Q: Dans `nano`, quel raccourci permet de couper une ligne ?
+A) Ctrl + O
+B) Ctrl + K
+C) Ctrl + U
+D) Ctrl + X
+R: B
+E: `Ctrl + K` coupe la ligne courante dans `nano`.
