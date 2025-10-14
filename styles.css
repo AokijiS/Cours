@@ -172,31 +172,43 @@ section > *:not(ul):not(h1):not(h2):not(h3) {
 /* =========================
    🧠 QCM SECTION
 ========================= */
+/* Section QCM */
 #qcm {
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Pour adaptativité */
+  align-items: center; /* Centre le contenu */
+  gap: 1rem;
+  padding: 2rem;
+  background: #f9fafb;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  max-width: 900px;
+  margin: 2rem auto;
+  line-height: 1.6; /* pour espacer le texte */
 }
 
+/* Le select pour choisir le fichier */
 #fileSelect {
   padding: 0.6rem 1rem;
   border: 1px solid #d1d5db;
   border-radius: 8px;
   margin-top: 0.5rem;
-  width: 80%; /* Adaptatif */
-  max-width: 300px; /* Limite pour fluidité */
+  width: 80%; /* adaptatif */
+  max-width: 300px;
   font-size: 1rem;
 }
 
+/* Conteneur des boutons de navigation */
 #navigationButtons {
   margin-top: 1.5rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
-  flex-wrap: wrap; /* Permet un wrap pour espacements non bloqués */
+  flex-wrap: wrap;
 }
 
+/* Boutons Précédent / Suivant / Terminer */
 #navigationButtons button {
   background: #2563eb;
   color: white;
@@ -206,13 +218,65 @@ section > *:not(ul):not(h1):not(h2):not(h3) {
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
   font-size: 1rem;
-  flex: 1 1 auto; /* Pour adaptativité */
+  flex: 1 1 auto;
 }
 
 #navigationButtons button:hover {
   background: #1d4ed8;
   transform: translateY(-2px);
 }
+
+/* Texte du QCM : questions et réponses */
+#quizContainer {
+  margin-top: 1.5rem;
+  width: 90%;
+  max-width: 700px;
+  text-align: left; /* pour que les questions soient lisibles */
+  font-size: 1.1rem;
+  color: #111827;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Questions */
+#quizContainer .question {
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+/* Réponses */
+#quizContainer .answers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+#quizContainer .answers label {
+  background: #f3f4f6;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#quizContainer .answers input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+#quizContainer .answers label:hover {
+  background: #e0e7ff;
+}
+
+/* Résultats */
+#result {
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #111827;
+}
+
 
 /* =========================
    💬 CONTACT SECTION
