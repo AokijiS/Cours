@@ -158,15 +158,17 @@ section > *:not(ul):not(h1):not(h2):not(h3) {
 }
 
 #projets .more-info {
-  display: none;
-  margin-top: 1rem;
-  background: white;
-  border-left: 3px solid #60a5fa;
+  display: block;
+  background: #5865f2;
+  color: white;
+  text-align: center;
   padding: 1rem;
-  border-radius: 8px;
-  animation: fadeIn 0.3s ease;
-  line-height: 1.6;
-  width: 95%; /* Espacement fluide */
+  border-radius: 10px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+  width: 80%; /* Pour fluidité */
+  max-width: 400px;
 }
 
 /* =========================
