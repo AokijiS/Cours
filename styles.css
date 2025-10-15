@@ -145,23 +145,34 @@ section > *:not(ul):not(h1):not(h2):not(h3) {
   color: #111827;
 }
 
-#projets .menu-btn {
-  display: block;
-  background: #5865f2;
-  color: white;
-  text-align: center;
-  padding: 1rem;
+.menu-btn {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
+  color: #fff;
+  border: 1px solid #444;
   border-radius: 10px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background 0.2s;
-  width: 80%; /* Pour fluidité */
-  max-width: 400px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
 }
 
-#projets .menu-btn:hover {
-  color: #4752c4;
+.menu-btn:hover {
+  background: linear-gradient(135deg, #333, #444);
+  transform: scale(1.02);
 }
+
+.more-info {
+  display: none;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
 
 #projets .more-info {
   display: block;
