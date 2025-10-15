@@ -289,20 +289,29 @@ section > *:not(ul):not(h1):not(h2):not(h3) {
 /* =========================
    💬 CONTACT SECTION
 ========================= */
-#contact {
-  background: #f9fafb;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Styles pour les éléments .more-info dans la section #contact */
+/* Cacher les informations par défaut avec une transition */
+.contact-info .more-info {
+  opacity: 0; /* Rend invisible */
+  visibility: hidden; /* Empêche les interactions */
+  max-height: 0; /* Pour un effet de glissement */
+  overflow: hidden; /* Cache le contenu qui dépasse */
+  transition: opacity 0.3s ease, max-height 0.3s ease, visibility 0.3s ease; /* Animation fluide */
+  margin-top: 0.5rem; /* Un peu d'espace pour l'animation */
 }
-
-.contact-info {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  width: 90%; /* Adaptatif */
+/* Animation au survol du conteneur parent (le <li>) */
+.contact-info li:hover .more-info {
+  opacity: 1; /* Rend visible */
+  visibility: visible; /* Permet les interactions */
+  max-height: 200px; /* Hauteur maximale pour l'effet de glissement (ajustez si nécessaire) */
+}
+/* Facultatif : Style pour le bouton lui-même pour un feedback visuel */
+.contact-info .menu-btn {
+  transition: background 0.2s ease, transform 0.2s ease; /* Ajoute une transition au bouton */
+}
+.contact-info .menu-btn:hover {
+  background: #4752c4; /* Change la couleur au survol */
+  transform: translateY(-2px); /* Un léger soulèvement pour l'animation */
 }
 
 .discord-btn {
