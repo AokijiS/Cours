@@ -34,10 +34,9 @@
     <section id="cours">
       <h2>Mes cours</h2>
       <p>Ici, tu trouveras des notes et ressources de cours.</p>
-        <a class="download-btn" href=https://www.notion.so/Cours-d-conomie-3-09-26339a8ae98f80ddb159f78950da0183?source=copy_link" target="_blank">Cours de Mr. Micheli : Notion</a>
+        <a class="download-btn" href="https://www.notion.so/Cours-d-conomie-3-09-26339a8ae98f80ddb159f78950da0183?source=copy_link" target="_blank">Cours de Mr. Micheli : Notion</a>
         <hr align="center" width="50%">
         <a href="Poly-R1-08.pdf" download class="download-btn">Cours de Mme. Hammouche : Télécharger le PDF</a>
-
     </section>
 
     <!-- ===== PROJETS / RAPPELS ===== -->
@@ -47,7 +46,7 @@
         <li>
           <div class="title">
             <span>JMI</span>
-            <button class="menu-btn">⋮</button>
+            <button class="menu-btn">Voir plus</button>
           </div>
           <div class="more-info">
 Bonjour à tous,
@@ -83,7 +82,7 @@ http://jmi.u-lille.fr
         <li>
           <div class="title">
             <span>Rdv médical</span>
-            <button class="menu-btn">⋮</button>
+            <button class="menu-btn">Voir plus</button>
           </div>
           <div class="more-info">
 Bonjour,
@@ -159,8 +158,7 @@ Cordialement.
           </li>
           <li>
             <div class="discord-btn">
-              <span>👤 Contact Charlelie</span>
-              <button class="menu-btn">⋮</button>
+              <button class="menu-btn">👤 Contact Charlelie</button>
             </div>
             <div class="more-info">
               <p>💯 Instagram : 
@@ -183,5 +181,16 @@ Cordialement.
 
   <!-- ===== SCRIPT JS ===== -->
   <script src="main.js"></script>
+  <script>
+  /* === MENU "⋮" (PROJETS, CONTACT, ETC.) === */
+  document.querySelectorAll('.menu-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const info = btn.closest('li').querySelector('.more-info');
+      if (info) {
+        info.style.display = info.style.display === 'block' ? 'none' : 'block';
+      }
+    });
+  });
+  </script>
 </body>
 </html>
