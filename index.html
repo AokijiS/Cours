@@ -34,9 +34,9 @@
     <section id="cours">
       <h2>Mes cours</h2>
       <p>Ici, tu trouveras des notes et ressources de cours.</p>
-        <a class="download-btn" href="https://www.notion.so/Cours-d-conomie-3-09-26339a8ae98f80ddb159f78950da0183?source=copy_link" target="_blank">Cours de Mr. Micheli : Notion</a>
-        <hr align="center" width="50%">
-        <a href="Poly-R1-08.pdf" download class="download-btn">Cours de Mme. Hammouche : Télécharger le PDF</a>
+      <a class="download-btn" href="https://www.notion.so/Cours-d-conomie-3-09-26339a8ae98f80ddb159f78950da0183?source=copy_link" target="_blank">Cours de Mr. Micheli : Notion</a>
+      <hr align="center" width="50%">
+      <a href="Poly-R1-08.pdf" download class="download-btn">Cours de Mme. Hammouche : Télécharger le PDF</a>
     </section>
 
     <!-- ===== PROJETS / RAPPELS ===== -->
@@ -65,7 +65,7 @@ sont ouvertes depuis ce mercredi 1er octobre.
 Lors de votre inscription vous devrez saisir votre adresse email
 institutionnelle (de la forme prenom.nom.etu@univ-lille.fr) sur
 laquelle vous recevrez un mot de passe vous permettant de modifier
-votre sélection si l'envie vous en venez.
+votre sélection si l'envie vous en venait.
 
 Des créneaux ont été réservés dans votre emploi du temps pour que vous
 y participiez. Cette participation fait partie intégrante de la
@@ -107,7 +107,7 @@ Cordialement.
     <section id="aide">
       <h2>Aide et ressources</h2>
       <p>Des liens utiles et conseils pour progresser.</p>
-        <a href="https://www.notion.so/Commande-26239a8ae98f80aea23ec7ca01ec0f26?source=copy_link" target="_blank" class="download-btn">Cours des commandes : Notion</a>
+      <a href="https://www.notion.so/Commande-26239a8ae98f80aea23ec7ca01ec0f26?source=copy_link" target="_blank" class="download-btn">Cours des commandes : Notion</a>
     </section>
 
     <!-- ===== QCM ===== -->
@@ -135,25 +135,35 @@ Cordialement.
     <!-- ===== CONTACT ===== -->
     <section id="contact">
       <h2>Contact</h2>
-      <br>
       <p>Tu peux me joindre ici :</p>
-      <br>
       <div class="contact-info">
         <ul>
+          <!-- Discord -->
           <li>
-        <a class="discord-btn" href="https://discord.gg/HGUBD562" target="_blank">
-          💬 Rejoindre le serveur Discord — <strong>GRP F canne à pêche</strong>
-        </a>
-        </li>
-         <li>
-    <p>👤 Contact Amine</p>
-  <div class="more-info">
-    <p>💯 Instagram : <a href="https://www.instagram.com/lemo.jito/" target="_blank">Lemo.jito</a></p>
-    <p>✉️ Mail : <a class="contact-link" href="mailto:amine.hami.etu@univ-lille.fr">amine.hami.etu@univ-lille.fr</a></p>
-  </div>
-</li>
+            <a class="discord-btn" href="https://discord.gg/HGUBD562" target="_blank">
+              💬 Rejoindre le serveur Discord — <strong>GRP F canne à pêche</strong>
+            </a>
+          </li>
+
+          <!-- Contact Amine -->
           <li>
-              <p>👤 Contact Charlelie</p>
+            <div class="discord-btn">
+              <button class="menu-btn">👤 Contact Amine</button>
+            </div>
+            <div class="more-info">
+              <p>💯 Instagram : 
+                <a href="https://www.instagram.com/lemo.jito/" target="_blank">Lemo.jito</a>
+              </p>
+              <p>✉️ Mail : 
+                <a class="contact-link" href="mailto:amine.hami.etu@univ-lille.fr">amine.hami.etu@univ-lille.fr</a>
+              </p>
+            </div>
+          </li>
+
+          <!-- Contact Charlelie -->
+          <li>
+            <div class="discord-btn">
+              <button class="menu-btn">👤 Contact Charlelie</button>
             </div>
             <div class="more-info">
               <p>💯 Instagram : 
@@ -177,7 +187,7 @@ Cordialement.
   <!-- ===== SCRIPT JS ===== -->
   <script src="main.js"></script>
   <script>
-  /* === MENU "⋮" (PROJETS, CONTACT, ETC.) === */
+  // === MENU "Voir plus" et "Contact" ===
   document.querySelectorAll('.menu-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const info = btn.closest('li').querySelector('.more-info');
