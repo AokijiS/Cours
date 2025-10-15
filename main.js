@@ -229,3 +229,16 @@ submitBtn.addEventListener('click', ()=>{
 });
 
 
+
+document.querySelectorAll('.menu-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const info = btn.closest('li').querySelector('.more-info');
+    if (info) {
+      info.style.display = info.style.display === 'block' ? 'none' : 'block';
+    }
+  });
+});
+
+
+
+
