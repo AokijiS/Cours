@@ -131,7 +131,6 @@ prevBtn.addEventListener('click', ()=>{
   }
 });
 
-// === Affichage des résultats détaillés ===
 submitBtn.addEventListener('click', ()=>{
   score = 0;
   const wrongAnswers = [];
@@ -144,56 +143,91 @@ submitBtn.addEventListener('click', ()=>{
     }
   });
 
-  quizContainer.innerHTML = `<h2>Résultat :</h2>
-    <p>🎯 ${score} / ${questions.length}</p>`;
+  // Afficher le score
+  quizContainer.innerHTML = `
+    <h2>Résultat :</h2>
+    <p>🎯 ${score} / ${questions.length}</p>
+  `;
+
   prevBtn.style.display = nextBtn.style.display = submitBtn.style.display = 'none';
 
-  // Si tout est correct
+  // Si tout est juste
   if (wrongAnswers.length === 0) {
     resultDiv.innerHTML = `<p>✅ Parfait ! Toutes les réponses sont correctes.</p>`;
     return;
   }
 
-  // Sinon : afficher les mauvaises réponses une par une
-  let wrongIndex = 0;
+  // Ajouter le bouton "Voir mes erreurs"
+  const showMistakesBtn = document.createElement('button');
+  showMistakesBtn.textContent = "Voir mes erreurs ❌";
+  showMistakesBtn.style.marginTop = "1rem";
+  showMistakesBtn.style.background = "#ef4444";
+  showMistakesBtn.style.color = "white";
+  showMistakesBtn.style.border = "none";
+  showMistakesBtn.style.padding = "0.6rem 1.2rem";
+  showMistakesBtn.style.borderRadius = "8px";
+  showMistakesBtn.style.cursor = "pointer";
+  showMistakesBtn.style.fontSize = "1rem";
+  quizContainer.appendChild(showMistakesBtn);
 
-  function displayWrongQuestion() {
-    const q = wrongAnswers[wrongIndex];
-    quizContainer.innerHTML = `
-      <h3>❌ Mauvaise réponse ${wrongIndex + 1}/${wrongAnswers.length}</h3>
-      <p><strong>Question :</strong> ${q.question}</p>
-      <ul>
-        ${q.choices.map(c => 
-          `<li>${c.label}) ${c.text} ${
-            c.label === q.correct ? "✅" : (c.label === q.selected ? "❌" : "")
-          }</li>`).join('')}
-      </ul>
-      <p><strong>Explication :</strong> ${q.explanation || "Aucune explication fournie."}</p>
-      <div id="wrongNav">
-        <button id="prevWrong" ${wrongIndex === 0 ? "disabled" : ""}>⬅️</button>
-        <button id="nextWrong">${wrongIndex === wrongAnswers.length - 1 ? "Terminer" : "➡️"}</button>
-      </div>
-    `;
+  showMistakesBtn.addEventListener('click', () => {
+    displayWrongQuestions();
+  });
 
-    document.getElementById('prevWrong').addEventListener('click', () => {
-      if (wrongIndex > 0) {
-        wrongIndex--;
-        displayWrongQuestion();
-      }
-    });
+  // Fonction d'affichage des erreurs une par une
+  function displayWrongQuestions() {
+    let wrongIndex = 0;
 
-    document.getElementById('nextWrong').addEventListener('click', () => {
-      if (wrongIndex < wrongAnswers.length - 1) {
-        wrongIndex++;
-        displayWrongQuestion();
-      } else {
-        quizContainer.innerHTML = `<h2>🧠 Révision terminée !</h2>`;
-      }
-    });
+    function displayWrongQuestion() {
+      const q = wrongAnswers[wrongIndex];
+      quizContainer.innerHTML = `
+        <h3>❌ Mauvaise réponse ${wrongIndex + 1}/${wrongAnswers.length}</h3>
+        <p><strong>Question :</strong> ${q.question}</p>
+        <ul>
+          ${q.choices.map(c => 
+            `<li>${c.label}) ${c.text} ${
+              c.label === q.correct ? "✅" : (c.label === q.selected ? "❌" : "")
+            }</li>`).join('')}
+        </ul>
+        <p><strong>Explication :</strong> ${q.explanation || "Aucune explication fournie."}</p>
+        <div id="wrongNav">
+          <button id="prevWrong" ${wrongIndex === 0 ? "disabled" : ""}>⬅️</button>
+          <button id="nextWrong">${wrongIndex === wrongAnswers.length - 1 ? "Terminer" : "➡️"}</button>
+        </div>
+      `;
+
+      document.getElementById('prevWrong').addEventListener('click', () => {
+        if (wrongIndex > 0) {
+          wrongIndex--;
+          displayWrongQuestion();
+        }
+      });
+
+      document.getElementById('nextWrong').addEventListener('click', () => {
+        if (wrongIndex < wrongAnswers.length - 1) {
+          wrongIndex++;
+          displayWrongQuestion();
+        } else {
+          quizContainer.innerHTML = `<h2>🧠 Révision terminée !</h2>
+          <button id="retryBtn" style="
+            margin-top:1rem; background:#2563eb; color:white; border:none;
+            padding:0.6rem 1.2rem; border-radius:8px; cursor:pointer; font-size:1rem;">
+            🔁 Recommencer le QCM
+          </button>`;
+          document.getElementById('retryBtn').addEventListener('click', () => {
+            currentQuestionIndex = 0;
+            score = 0;
+            displayQuestion();
+            resultDiv.innerHTML = '';
+          });
+        }
+      });
+    }
+
+    displayWrongQuestion();
   }
-
-  displayWrongQuestion();
 });
+
 
 /* === MENU "⋮" (PROJETS, CONTACT, ETC.) === */
 document.querySelectorAll('.menu-btn').forEach(btn => {
