@@ -230,11 +230,13 @@ submitBtn.addEventListener('click', ()=>{
 
 
 
-document.querySelectorAll('.menu-btn').forEach(btn => {
+// Toggle only for menu buttons inside the #projets section (les rappels/projets)
+document.querySelectorAll('#projets .menu-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const info = btn.closest('li').querySelector('.more-info');
     if (info) {
-      info.classList.toggle('open');
+      // toggle display for projets items
+      info.style.display = info.style.display === 'block' ? 'none' : 'block';
     }
   });
 });

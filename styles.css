@@ -317,11 +317,7 @@ section > *:not(ul):not(h1):not(h2):not(h3) {
   max-height: 200px; /* Hauteur maximale pour l'effet de glissement (ajustez si nécessaire) */
 }
 /* Classe utilitaire pour afficher la zone via JS (toggle) */
-.contact-info .more-info.open {
-  opacity: 1;
-  visibility: visible;
-  max-height: 200px;
-}
+
 /* Facultatif : Style pour le bouton lui-même pour un feedback visuel */
 .contact-info .menu-btn {
   transition: background 0.2s ease, transform 0.2s ease; /* Ajoute une transition au bouton */
