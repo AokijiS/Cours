@@ -1,189 +1,356 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>📘 GRP F</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📘 GRP F Futuriste</title>
+
+<!-- CSS Futuriste -->
+<style>
+/* ========================= 🌌 BASE DU SITE ========================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: #0a0a0a;
+  color: #f5f5f5;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+/* ========================= 🧭 NAVBAR ========================= */
+header {
+  background: #111;
+  padding: 1rem 0;
+  box-shadow: 0 0 20px #0ff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.navbar { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.nav-links { display: flex; gap: 1rem; list-style: none; flex-wrap: wrap; }
+.nav-links a {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: #222;
+  color: #0ff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.nav-links a:hover { background: #0ff; color: #000; transform: translateY(-2px); }
+
+/* ========================= 🧩 SECTIONS ========================= */
+main section {
+  background: #111;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 20px #0ff33a33 inset, 0 4px 16px rgba(0,0,0,0.3);
+  max-width: 900px;
+  width: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s;
+}
+main section:hover { transform: translateY(-3px); }
+main h1, main h2 { color: #0ff; margin-bottom: 1.5rem; }
+main p { color: #aaa; margin-bottom: 1rem; }
+
+/* ========================= ⚙️ PROJETS / RAPPELS ========================= */
+#projets li, .contact-info li {
+  background: #222;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 0 10px #0ff inset;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  transition: 0.3s;
+}
+#projets .menu-btn, .contact-btn {
+  background: #0ff;
+  color: #000;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+#projets .menu-btn:hover, .contact-btn:hover {
+  background: #00f;
+  color: #fff;
+  transform: scale(1.05);
+}
+.more-info {
+  display: none;
+  background: #111;
+  color: #0ff;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 10px;
+  max-width: 400px;
+  transition: all 0.3s ease;
+}
+
+/* ========================= 🧠 QCM SECTION ========================= */
+#qcm { background: #111; text-align: center; gap: 1rem; padding: 2rem; border-radius: 16px; box-shadow: 0 0 20px #0ff inset; }
+#quizContainer { width: 90%; max-width: 700px; text-align: left; font-size: 1.1rem; background: #222; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 15px #0ff inset; }
+#quizContainer .question { font-weight: 600; margin-bottom: 0.8rem; color: #0ff; }
+#quizContainer .answers label { background: #111; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; transition: 0.2s; color: #0ff; }
+#quizContainer .answers label:hover { background: #0ff; color: #000; }
+#navigationButtons button, #submitBtn { background: #0ff; color: #000; border-radius: 8px; border: none; cursor: pointer; transition: 0.2s; }
+#navigationButtons button:hover { background: #00f; color: #fff; transform: translateY(-2px); }
+#userQcmUpload { margin-top: 1rem; padding: 0.5rem; border-radius: 8px; border: 1px solid #0ff; background: #111; color: #0ff; width: 80%; max-width: 300px; }
+
+/* ========================= ⚓ FOOTER ========================= */
+footer { text-align: center; padding: 1rem; color: #888; margin-top: auto; background: #111; box-shadow: 0 -2px 10px #0ff inset; }
+
+/* ========================= 📱 RESPONSIVE ========================= */
+@media (max-width: 700px) { main section { width: 95%; padding: 1.5rem; } .nav-links { gap: 0.6rem; justify-content: center; } }
+@media (max-width: 480px) { main section { margin: 1rem auto; } .contact-info li, #projets li { width: 100%; } }
+</style>
 </head>
+
 <body>
-  <!-- ===== HEADER & NAVBAR ===== -->
-  <header>
-    <nav class="navbar">
-      <ul class="nav-links">
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#cours">Cours</a></li>
-        <li><a href="#projets">Projets</a></li>
-        <li><a href="#aide">Aide</a></li>
-        <li><a href="#qcm">QCM</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- ===== MAIN ===== -->
-  <main>
-    <!-- ===== ACCUEIL ===== -->
-    <section id="accueil" class="active">
-      <h1>Bienvenue sur mon site</h1>
-      <p>Un espace pour coder et apprendre.</p>
-    </section>
+<!-- ===== HEADER & NAVBAR ===== -->
+<header>
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#cours">Cours</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#aide">Aide</a></li>
+      <li><a href="#qcm">QCM</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <!-- ===== COURS ===== -->
-    <section id="cours">
-      <h2>Mes cours</h2>
-      <p>Ici, tu trouveras des notes et ressources de cours.</p>
-      <a class="download-btn" href="https://www.notion.so/Cours-d-conomie-3-09-26339a8ae98f80ddb159f78950da0183?source=copy_link" target="_blank">Cours de Mr. Micheli : Notion</a>
-      <hr align="center" width="50%">
-      <a href="Poly-R1-08.pdf" download class="download-btn">Cours de Mme. Hammouche : Télécharger le PDF</a>
-    </section>
+<!-- ===== MAIN ===== -->
+<main>
 
-    <!-- ===== PROJETS / RAPPELS ===== -->
-    <section id="projets">
-      <h2>Rappel ⚠️</h2>
-      <ul>
-        <li>
-          <div class="title">
-            <span>JMI</span>
-            <button class="menu-btn">Voir plus</button>
-          </div>
-          <div class="more-info">
-Bonjour à tous,
+  <!-- ===== ACCUEIL ===== -->
+  <section id="accueil" class="active">
+    <h1>Bienvenue sur mon site</h1>
+    <p>Un espace pour coder et apprendre.</p>
+  </section>
 
-Comme vous le savez sans doute le jeudi 16 octobre prochain aura lieu
-la journée des métiers de l'informatique [JMI].
+  <!-- ===== COURS ===== -->
+  <section id="cours">
+    <h2>Mes cours</h2>
+    <p>Ici, tu trouveras des notes et ressources de cours.</p>
+    <a class="download-btn" href="https://www.notion.so/Cours-d-conomie-3-09-26339a8ae98f80ddb159f78950da0183?source=copy_link" target="_blank">Cours de Mr. Micheli : Notion</a>
+    <hr align="center" width="50%">
+    <a href="Poly-R1-08.pdf" download class="download-btn">Cours de Mme. Hammouche : Télécharger le PDF</a>
+  </section>
 
-[JMI]: https://informatique.univ-lille.fr/jmi/2025
+  <!-- ===== PROJETS / RAPPELS ===== -->
+  <section id="projets">
+    <h2>Rappel ⚠️</h2>
+    <ul>
+      <li>
+        <div class="title">
+          <span>JMI</span>
+          <button class="menu-btn">Voir plus</button>
+        </div>
+        <div class="more-info">
+          Informations JMI...
+        </div>
+      </li>
+      <li>
+        <div class="title">
+          <span>👤 Contact Amine</span>
+          <button class="menu-btn">Voir plus</button>
+        </div>
+        <div class="more-info">
+          Informations Contact Amine...
+        </div>
+      </li>
+    </ul>
+  </section>
 
-Elle se déroulera dans les locaux de Polytech Lille situés sur notre
-campus (cf https://apr1.org/polytechlille).
+  <!-- ===== QCM ===== -->
+  <section id="qcm">
+    <h1>💻 QCM Depuis un texte</h1>
+    <label for="fileSelect">Choisis un fichier QCM :</label>
+    <select id="fileSelect">
+      <option value="">-- Sélectionner un fichier --</option>
+      <option value="QCMtxt/QCM_Base_Fichiers.txt">Base fichiers</option>
+      <option value="QCMtxt/QCM_Editeurs_Texte.txt">Éditeurs de texte</option>
+    </select>
 
-Les inscriptions, **obligatoires pour tous les étudiants de BUT**,
-sont ouvertes depuis ce mercredi 1er octobre.
+    <label for="userQcmUpload">Ou téléverse ton propre fichier QCM :</label>
+    <input type="file" id="userQcmUpload" accept=".txt,.md">
 
-Lors de votre inscription vous devrez saisir votre adresse email
-institutionnelle (de la forme prenom.nom.etu@univ-lille.fr) sur
-laquelle vous recevrez un mot de passe vous permettant de modifier
-votre sélection si l'envie vous en venait.
+    <div id="quizContainer"></div>
+    <div id="navigationButtons">
+      <button id="prevBtn" style="display:none;">⬅️ Précédent</button>
+      <button id="nextBtn" style="display:none;">➡️ Suivant</button>
+      <button id="submitBtn" style="display:none;">✅ Terminer</button>
+    </div>
+    <div id="result"></div>
+  </section>
 
-Des créneaux ont été réservés dans votre emploi du temps pour que vous
-y participiez. Cette participation fait partie intégrante de la
-formation et un émargement sera mis en place pour vérifier votre
-présence.
-
-Il est important et *impératif* de vous inscrire à *3* créneaux avant
-jeudi prochain (le 9 octobre) en allant sur le site :
-
-http://jmi.u-lille.fr
-          </div>
-        <li>
-          <div class="title">
-            <span>👤 Contact Amine</span>
-          </div>
-            <button class="menu-btn">Voir plus</button>
-          </div>
-          <div class="more-info">
-Bonjour,
-
-Vous avez reçu un mail du service universitaire de santé étudiante, où vous devez vous positionner sur un créneau pour faire votre visite médicale.
-
-Cette visite médicale est OBLIGATOIRE.
-
-Un récapitulatif du service santé sera fait afin de savoir si tous les étudiants ont bien fait leur visite médicale.
-
-Sans la visite médicale, il ne sera pas possible de valider votre année.
-
-Pensez à me transmettre votre justificatif quand vous avez fait votre visite.
-
-Cordialement.
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- ===== AIDE ===== -->
-    <section id="aide">
-      <h2>Aide et ressources</h2>
-      <p>Des liens utiles et conseils pour progresser.</p>
-      <a href="https://www.notion.so/Commande-26239a8ae98f80aea23ec7ca01ec0f26?source=copy_link" target="_blank" class="download-btn">Cours des commandes : Notion</a>
-    </section>
-
-    <!-- ===== QCM ===== -->
-    <section id="qcm">
-      <h1>💻 QCM Depuis un texte</h1>
-      <label for="fileSelect">Choisis un fichier QCM :</label>
-      <select id="fileSelect">
-        <option value="">-- Sélectionner un fichier --</option>
-        <option value="QCMtxt/QCM_Base_Fichiers.txt">Base fichiers</option>
-        <option value="QCMtxt/QCM_Editeurs_Texte.txt">Éditeurs de texte</option>
-        <option value="QCMtxt/QCM_Flux_Redirection.txt">Flux et redirection</option>
-        <option value="QCMtxt/QCM_Traitement_Texte.txt">Traitement du texte</option>
-        <option value="QCMtxt/QCM_Expansion_Globbing.txt">Expansion et globbing</option>
-        <option value="QCMtxt/QCM_Code_Retour.txt">Code de retour</option>
-      </select>
-      <div id="quizContainer"></div>
-      <div id="navigationButtons">
-        <button id="prevBtn" style="display:none;">⬅️ Précédent</button>
-        <button id="nextBtn" style="display:none;">➡️ Suivant</button>
-        <button id="submitBtn" style="display:none;">✅ Terminer</button>
-      </div>
-      <div id="result"></div>
-    </section>
-<!-- ===== CONTACT ===== -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Tu peux me joindre ici :</p>
-
-  <div class="contact-info">
-
-      <!-- Serveur Discord -->
-        <a class="discord-btn" href="https://discord.gg/HGUBD562" target="_blank">
-          💬 Rejoindre le serveur Discord — <strong>GRP F canne à pêche</strong>
-        </a>
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <a class="discord-btn" href="https://discord.gg/HGUBD562" target="_blank">💬 Rejoindre le serveur Discord</a>
       <div class="contact-buttons">
-        <!-- Contact Amine -->
         <div class="contact-item">
           <button class="contact-btn">👤 Contact Amine</button>
           <div class="more-info">
-            <div class="discord-btn">
-              <p>💯 Instagram :
-                <a href="https://www.instagram.com/lemo.jito/" target="_blank">Lemo.jito</a>
-              </p>
-              <p>✉️ Mail :
-                <a class="contact-link" href="mailto:amine.hami.etu@univ-lille.fr">amine.hami.etu@univ-lille.fr</a>
-              </p>
-            </div>
+            <p>✉️ Mail : amine.hami.etu@univ-lille.fr</p>
           </div>
         </div>
-
-        <!-- Contact Charlelie -->
         <div class="contact-item">
           <button class="contact-btn">👤 Contact Charlelie</button>
           <div class="more-info">
-            <div class="discord-btn">
-              <p>💯 Instagram :
-                <a href="https://www.instagram.com/j_charlelie2007/" target="_blank">j_charlelie2007</a>
-              </p>
-              <p>✉️ Mail :
-                <a class="contact-link" href="mailto:charlelie.jean.etu@univ-lille.fr">charlelie.jean.etu@univ-lille.fr</a>
-              </p>
-            </div>
+            <p>✉️ Mail : charlelie.jean.etu@univ-lille.fr</p>
           </div>
         </div>
       </div>
-  </div>
-</section>
+    </div>
+  </section>
 
+</main>
 
-  </main>
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>Copyright © Aokiji</p>
+</footer>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <p>Copyright © Aokiji</p>
-  </footer>
+<!-- ===== SCRIPT JS ===== -->
+<script>
+/* ================= NAVIGATION ENTRE SECTIONS ================= */
+const links = document.querySelectorAll('.nav-links a');
+const sections = document.querySelectorAll('section');
+let activeSection = document.querySelector('section.active') || sections[0];
+sections.forEach(section => { if (section !== activeSection) section.style.display = "none"; });
+links.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').replace('#','');
+    const targetSection = document.getElementById(targetId);
+    if (!targetSection || targetSection === activeSection) return;
+    activeSection.classList.remove('active');
+    setTimeout(() => {
+      activeSection.style.display = "none";
+      targetSection.style.display = "flex";
+      void targetSection.offsetWidth;
+      targetSection.classList.add('active');
+      activeSection = targetSection;
+    }, 300);
+  });
+});
 
-  <!-- ===== SCRIPT JS ===== -->
-  <script src="main.js"></script>
+/* ================= TOGGLE PROJETS / CONTACT ================= */
+document.querySelectorAll('.menu-btn, .contact-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const info = btn.closest('li, .contact-item')?.querySelector('.more-info');
+    if(info) info.style.display = info.style.display === 'block' ? 'none' : 'block';
+  });
+});
+
+/* ================= QCM ================= */
+let questions = [];
+let currentQuestionIndex = 0;
+let score = 0;
+const quizContainer = document.getElementById('quizContainer');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const submitBtn = document.getElementById('submitBtn');
+const resultDiv = document.getElementById('result');
+const fileSelect = document.getElementById('fileSelect');
+const userQcmUpload = document.getElementById('userQcmUpload');
+
+/* Sélection fichier QCM */
+fileSelect.addEventListener('change', function() {
+  const fileName = fileSelect.value;
+  if(!fileName) return;
+  fetch(fileName).then(res => res.text()).then(text => {
+    parseQuestions(text);
+    currentQuestionIndex=0; score=0; displayQuestion(); resultDiv.innerHTML='';
+  });
+});
+
+/* Upload utilisateur */
+userQcmUpload.addEventListener('change', function() {
+  const file = this.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    parseQuestions(e.target.result);
+    currentQuestionIndex=0; score=0; displayQuestion(); resultDiv.innerHTML='';
+  }
+  reader.readAsText(file);
+});
+
+/* Parse QCM */
+function parseQuestions(text){
+  questions=[];
+  const blocks=text.trim().split(/\n\s*\n/);
+  blocks.forEach(block=>{
+    const lines = block.trim().split('\n');
+    const questionLine = lines.find(l => l.startsWith('Q:'));
+    const answerLine = lines.find(l => l.startsWith('R:'));
+    const choices = lines.filter(l => /^[A-D]\)/.test(l));
+    const explanationLine = lines.find(l=>l.startsWith('E:'))||'';
+    if(questionLine && answerLine && choices.length>0){
+      questions.push({
+        question: questionLine.slice(2).trim(),
+        choices: choices.map(c=>({label:c[0], text:c.slice(2).trim()})),
+        correct: answerLine.slice(2).trim().toUpperCase(),
+        explanation: explanationLine ? explanationLine.slice(2).trim():'',
+        selected: null
+      });
+    }
+  });
+}
+
+/* Affichage question */
+function displayQuestion(){
+  const q = questions[currentQuestionIndex];
+  quizContainer.innerHTML='';
+  const div = document.createElement('div');
+  div.className='question';
+  div.innerHTML=`<h3>Question ${currentQuestionIndex+1}/${questions.length}</h3><p>${q.question}</p>`;
+  const answersDiv=document.createElement('div'); answersDiv.className='answers';
+  q.choices.forEach(choice=>{
+    const label=document.createElement('label');
+    const input=document.createElement('input');
+    input.type='radio'; input.name='answer'; input.value=choice.label;
+    if(q.selected===choice.label) input.checked=true;
+    input.addEventListener('change',()=>q.selected=input.value);
+    label.appendChild(input); label.append(` ${choice.label}) ${choice.text}`);
+    answersDiv.appendChild(label);
+  });
+  div.appendChild(answersDiv);
+  quizContainer.appendChild(div);
+  prevBtn.style.display = currentQuestionIndex>0?'inline-block':'none';
+  nextBtn.style.display = currentQuestionIndex<questions.length-1?'inline-block':'none';
+  submitBtn.style.display = currentQuestionIndex===questions.length-1?'inline-block':'none';
+}
+
+/* Navigation */
+nextBtn.addEventListener('click',()=>{ if(currentQuestionIndex<questions.length-1){ currentQuestionIndex++; displayQuestion(); } });
+prevBtn.addEventListener('click',()=>{ if(currentQuestionIndex>0){ currentQuestionIndex--; displayQuestion(); } });
+submitBtn.addEventListener('click',()=>{
+  score=0; const wrongAnswers=[];
+  questions.forEach(q=>{ if(q.selected===q.correct){score++;} else {wrongAnswers.push(q);} });
+  quizContainer.innerHTML=`<h2>Résultat :</h2><p>🎯 ${score}/${questions.length}</p>`;
+  prevBtn.style.display=nextBtn.style.display=submitBtn.style.display='none';
+  if(wrongAnswers.length===0){ resultDiv.innerHTML="<p>✅ Parfait ! Toutes les réponses sont correctes.</p>"; return; }
+});
+</script>
 </body>
 </html>
